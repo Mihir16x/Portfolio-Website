@@ -1,691 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mihir Karnani — Software Engineer</title>
-<meta name="description" content="Mihir Karnani — Software Engineer building real-time AI and data systems.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#12161B;
-    --bg-elevated:#1A2028;
-    --bg-elevated-2:#1F2731;
-    --amber:#E4A75C;
-    --teal:#4FB6A6;
-    --text-hi:#EDEAE2;
-    --text-mid:#A6ADB8;
-    --text-low:#6B7280;
-    --border:#262D36;
-    --border-hi:#333C48;
-    --radius:6px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Mihir Karnani — Software Engineer building backend systems, full-stack products, cloud applications, and applied AI tools."
+  />
+  <meta name="theme-color" content="#f7f8fc" />
+  <title>Mihir Karnani — Software Engineer</title>
 
-    /* category accent palette — used for skill/project icon color-coding */
-    --c-blue:#5B9BF5;
-    --c-purple:#B18AF7;
-    --c-green:#4ADE9A;
-    --c-orange:#F5A05B;
-    --c-pink:#F4708C;
-    --c-teal:#3DD6C6;
-    --c-yellow:#F0C868;
-
-    /* section background tones — distinct but coordinated dark hues */
-    --bg-hero:#12161B;
-    --bg-about:#0F151D;
-    --bg-exp:#161320;
-    --bg-projects:#0E1A17;
-    --bg-skills:#1B1712;
-    --bg-edu:#12161B;
-  }
-
-  *{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text-hi);
-    font-family:'Inter', sans-serif;
-    font-size:16px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3, .display{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:600;
-    letter-spacing:-0.01em;
-    margin:0;
-  }
-  .mono{
-    font-family:'JetBrains Mono', monospace;
-  }
-  a{ color:inherit; }
-  ::selection{ background:var(--amber); color:var(--bg); }
-
-  :focus-visible{
-    outline:2px solid var(--amber);
-    outline-offset:3px;
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
-  }
-
-  .wrap{
-    max-width:960px;
-    margin:0 auto;
-    padding:0 28px;
-  }
-
-  /* ---------- NAV ---------- */
-  nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(18,22,27,0.85);
-    backdrop-filter: blur(10px);
-    border-bottom:1px solid var(--border);
-  }
-  nav .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    height:64px;
-    gap:12px;
-  }
-  .nav-mark{
-    font-family:'JetBrains Mono', monospace;
-    font-size:14px;
-    color:var(--text-hi);
-    display:flex; align-items:center; gap:8px;
-    flex:none;
-    white-space:nowrap;
-  }
-  .dot{
-    width:7px; height:7px; border-radius:50%;
-    background:var(--teal);
-    box-shadow:0 0 0 3px rgba(79,182,166,0.15);
-    flex:none;
-  }
-  .nav-links{
-    display:flex; gap:24px; list-style:none; margin:0; padding:0;
-    overflow-x:auto;
-    scrollbar-width:none;
-    white-space:nowrap;
-  }
-  .nav-links::-webkit-scrollbar{ display:none; }
-  .nav-links li{ flex:none; }
-  .nav-links a{
-    font-family:'JetBrains Mono', monospace;
-    font-size:13px;
-    color:var(--text-mid);
-    text-decoration:none;
-    transition:color .15s ease;
-  }
-  .nav-links a:hover{ color:var(--amber); }
-  @media (max-width:640px){
-    .nav-links{ gap:16px; }
-    .nav-links li:nth-child(4){ display:none; }
-  }
-  @media (max-width:420px){
-    .nav-mark{ font-size:12.5px; }
-    .nav-links{ gap:13px; }
-    .nav-links a{ font-size:12px; }
-  }
-
-  /* ---------- HERO ---------- */
-  header.hero{
-    padding:88px 0 80px;
-    background:var(--bg-hero);
-    border-bottom:1px solid var(--border);
-  }
-  .eyebrow{
-    font-family:'JetBrains Mono', monospace;
-    font-size:13px;
-    color:var(--amber);
-    display:flex; align-items:center; gap:8px;
-    margin-bottom:22px;
-  }
-  .eyebrow .dot{ background:var(--amber); box-shadow:0 0 0 3px rgba(228,167,92,0.15); }
-
-  h1.headline{
-    font-size:clamp(32px, 5vw, 52px);
-    line-height:1.08;
-    max-width:14ch;
-    color:var(--text-hi);
-  }
-  h1.headline .accent{ color:var(--teal); }
-
-  .hero-sub{
-    margin-top:22px;
-    max-width:52ch;
-    color:var(--text-mid);
-    font-size:17px;
-  }
-
-  .hero-cta{
-    margin-top:32px;
-    display:flex; gap:14px; flex-wrap:wrap;
-  }
-  .btn{
-    font-family:'JetBrains Mono', monospace;
-    font-size:13px;
-    padding:11px 18px;
-    border-radius:var(--radius);
-    text-decoration:none;
-    display:inline-flex; align-items:center; gap:8px;
-    transition:transform .15s ease, border-color .15s ease, background .15s ease;
-    border:1px solid var(--border-hi);
-    color:var(--text-hi);
-  }
-  .btn:hover{ transform:translateY(-1px); border-color:var(--amber); }
-  .btn.primary{
-    background:var(--amber);
-    color:#1A1305;
-    border-color:var(--amber);
-    font-weight:600;
-  }
-  .btn.primary:hover{ background:#EEB673; }
-
-  /* ---------- PIPELINE (signature element) ---------- */
-  .pipeline{
-    margin-top:64px;
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:0;
-    position:relative;
-  }
-  @media (max-width:760px){
-    .pipeline{ grid-template-columns:1fr; gap:14px; }
-    .pipeline .stage::after{ display:none; }
-  }
-  .pipeline .stage{
-    position:relative;
-    background:var(--bg-elevated);
-    border:1px solid var(--border);
-    padding:20px 18px;
-    opacity:0;
-    transform:translateY(8px);
-    animation:stageIn .5s ease forwards;
-  }
-  .pipeline .stage:nth-child(1){ animation-delay:.05s; border-radius:var(--radius) 0 0 var(--radius); }
-  .pipeline .stage:nth-child(2){ animation-delay:.25s; border-left:none; }
-  .pipeline .stage:nth-child(3){ animation-delay:.45s; border-left:none; }
-  .pipeline .stage:nth-child(4){ animation-delay:.65s; border-left:none; border-radius:0 var(--radius) var(--radius) 0; }
-  @media (max-width:760px){
-    .pipeline .stage{ border-radius:var(--radius) !important; border-left:1px solid var(--border) !important; }
-  }
-  @keyframes stageIn{ to{ opacity:1; transform:translateY(0); } }
-
-  .pipeline .stage::after{
-    content:"→";
-    position:absolute;
-    right:-11px; top:50%;
-    transform:translateY(-50%);
-    color:var(--text-low);
-    font-family:'JetBrains Mono', monospace;
-    font-size:14px;
-    z-index:2;
-    background:var(--bg);
-    width:20px; text-align:center;
-  }
-  .pipeline .stage:last-child::after{ content:""; }
-
-  .pipeline .stage.c-blue{ border-top:3px solid var(--c-blue); }
-  .pipeline .stage.c-purple{ border-top:3px solid var(--c-purple); }
-  .pipeline .stage.c-orange{ border-top:3px solid var(--c-orange); }
-  .pipeline .stage.c-teal{ border-top:3px solid var(--c-teal); }
-  .stage-icon{
-    width:30px; height:30px;
-    border-radius:7px;
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom:12px;
-  }
-  .stage-icon svg{ width:15px; height:15px; stroke-width:1.8; fill:none; }
-  .stage-icon.c-blue{ background:rgba(91,155,245,0.12); } .stage-icon.c-blue svg{ stroke:var(--c-blue); }
-  .stage-icon.c-purple{ background:rgba(177,138,247,0.12); } .stage-icon.c-purple svg{ stroke:var(--c-purple); }
-  .stage-icon.c-orange{ background:rgba(245,160,91,0.12); } .stage-icon.c-orange svg{ stroke:var(--c-orange); }
-  .stage-icon.c-teal{ background:rgba(61,214,198,0.12); } .stage-icon.c-teal svg{ stroke:var(--c-teal); }
-
-  .stage-label{
-    font-family:'JetBrains Mono', monospace;
-    font-size:11px;
-    letter-spacing:0.06em;
-    color:var(--text-low);
-    text-transform:uppercase;
-    margin-bottom:10px;
-  }
-  .stage-metric{
-    font-family:'Space Grotesk', sans-serif;
-    font-size:20px;
-    font-weight:600;
-    color:var(--text-hi);
-    line-height:1.2;
-  }
-  .stage-metric .unit{
-    font-size:13px;
-    color:var(--text-mid);
-    font-weight:400;
-    font-family:'Inter', sans-serif;
-  }
-  .stage-detail{
-    margin-top:6px;
-    font-size:12.5px;
-    color:var(--text-mid);
-    font-family:'JetBrains Mono', monospace;
-  }
-
-  /* ---------- SECTION SCAFFOLDING ---------- */
-  section{ padding:72px 0; }
-  #about{ background:var(--bg-about); }
-  #experience{ background:var(--bg-exp); }
-  #projects{ background:var(--bg-projects); }
-  #skills{ background:var(--bg-skills); }
-  #education{ background:var(--bg-edu); border-top:1px solid var(--border); }
-
-  .section-head{
-    display:flex; align-items:center; gap:10px;
-    margin-bottom:40px;
-  }
-  .section-head .dot{ background:var(--text-low); box-shadow:none; }
-  .section-head .tag{
-    font-family:'JetBrains Mono', monospace;
-    font-size:13px;
-    color:var(--text-low);
-  }
-  .section-head h2{
-    font-size:24px;
-    color:var(--text-hi);
-    margin-left:6px;
-  }
-
-  /* ---------- ABOUT ---------- */
-  .about-text{
-    max-width:64ch;
-    color:var(--text-mid);
-    font-size:16px;
-  }
-  .about-text p + p{ margin-top:16px; }
-  .about-text strong{ color:var(--text-hi); font-weight:500; }
-
-  /* ---------- EXPERIENCE ---------- */
-  .exp-item{
-    display:grid;
-    grid-template-columns:150px 1fr;
-    gap:24px;
-    padding:28px 0;
-    border-top:1px solid var(--border);
-  }
-  .exp-item:first-child{ border-top:none; padding-top:0; }
-  @media (max-width:640px){
-    .exp-item{ grid-template-columns:1fr; gap:8px; }
-  }
-  .exp-date{
-    font-family:'JetBrains Mono', monospace;
-    font-size:12.5px;
-    color:var(--text-low);
-    padding-top:3px;
-  }
-  .exp-role{ font-size:17px; color:var(--text-hi); font-weight:600; font-family:'Space Grotesk', sans-serif; }
-  .exp-org{ font-size:14px; color:var(--teal); margin-top:2px; font-family:'JetBrains Mono', monospace; }
-  .exp-bullets{ margin:14px 0 0; padding-left:18px; color:var(--text-mid); font-size:14.5px; }
-  .exp-bullets li{ margin-bottom:8px; }
-  .exp-bullets li:last-child{ margin-bottom:0; }
-  .exp-bullets strong{ color:var(--text-hi); font-weight:500; }
-
-  /* ---------- PROJECTS ---------- */
-  .proj-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-  }
-  @media (max-width:700px){ .proj-grid{ grid-template-columns:1fr; } }
-  .proj-card{
-    background:var(--bg-elevated);
-    border:1px solid var(--border);
-    border-top:3px solid var(--border);
-    border-radius:var(--radius);
-    padding:24px;
-    transition:border-color .15s ease, transform .15s ease;
-  }
-  .proj-card:hover{ transform:translateY(-2px); }
-  .proj-card.c-purple{ border-top-color:var(--c-purple); }
-  .proj-card.c-blue{ border-top-color:var(--c-blue); }
-  .proj-card.c-orange{ border-top-color:var(--c-orange); }
-  .proj-card.c-pink{ border-top-color:var(--c-pink); }
-  .proj-icon{
-    width:40px; height:40px;
-    border-radius:9px;
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom:14px;
-  }
-  .proj-icon svg{ width:20px; height:20px; stroke-width:1.7; fill:none; }
-  .proj-icon.c-purple{ background:rgba(177,138,247,0.12); border:1px solid rgba(177,138,247,0.3); }
-  .proj-icon.c-purple svg{ stroke:var(--c-purple); }
-  .proj-icon.c-blue{ background:rgba(91,155,245,0.12); border:1px solid rgba(91,155,245,0.3); }
-  .proj-icon.c-blue svg{ stroke:var(--c-blue); }
-  .proj-icon.c-orange{ background:rgba(245,160,91,0.12); border:1px solid rgba(245,160,91,0.3); }
-  .proj-icon.c-orange svg{ stroke:var(--c-orange); }
-  .proj-icon.c-pink{ background:rgba(244,112,140,0.12); border:1px solid rgba(244,112,140,0.3); }
-  .proj-icon.c-pink svg{ stroke:var(--c-pink); }
-  .proj-title{ font-size:16.5px; font-weight:600; color:var(--text-hi); font-family:'Space Grotesk', sans-serif; }
-  .proj-desc{ margin-top:10px; font-size:14px; color:var(--text-mid); }
-  .tag-row{ display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; }
-  .pill{
-    font-family:'JetBrains Mono', monospace;
-    font-size:11px;
-    color:var(--text-mid);
-    border:1px solid var(--border-hi);
-    border-radius:100px;
-    padding:4px 10px;
-  }
-
-  /* ---------- SKILLS ---------- */
-  .skills-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:20px;
-  }
-  @media (max-width:820px){ .skills-grid{ grid-template-columns:repeat(2, 1fr); } }
-  @media (max-width:560px){ .skills-grid{ grid-template-columns:1fr; } }
-  .skill-card{
-    background:var(--bg-elevated);
-    border:1px solid var(--border);
-    border-top:3px solid var(--border);
-    border-radius:var(--radius);
-    padding:22px 20px;
-    transition:border-color .15s ease, transform .15s ease;
-  }
-  .skill-card:hover{ transform:translateY(-2px); }
-  .skill-card.c-blue{ border-top-color:var(--c-blue); }
-  .skill-card.c-purple{ border-top-color:var(--c-purple); }
-  .skill-card.c-green{ border-top-color:var(--c-green); }
-  .skill-card.c-orange{ border-top-color:var(--c-orange); }
-  .skill-card.c-pink{ border-top-color:var(--c-pink); }
-  .skill-card.c-teal{ border-top-color:var(--c-teal); }
-  .skill-icon{
-    width:42px; height:42px;
-    border-radius:10px;
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom:14px;
-  }
-  .skill-icon svg{ width:21px; height:21px; stroke-width:1.7; }
-  .skill-icon.c-blue{ background:rgba(91,155,245,0.12); border:1px solid rgba(91,155,245,0.3); }
-  .skill-icon.c-blue svg{ stroke:var(--c-blue); fill:none; }
-  .skill-icon.c-purple{ background:rgba(177,138,247,0.12); border:1px solid rgba(177,138,247,0.3); }
-  .skill-icon.c-purple svg{ stroke:var(--c-purple); fill:none; }
-  .skill-icon.c-green{ background:rgba(74,222,154,0.12); border:1px solid rgba(74,222,154,0.3); }
-  .skill-icon.c-green svg{ stroke:var(--c-green); fill:none; }
-  .skill-icon.c-orange{ background:rgba(245,160,91,0.12); border:1px solid rgba(245,160,91,0.3); }
-  .skill-icon.c-orange svg{ stroke:var(--c-orange); fill:none; }
-  .skill-icon.c-pink{ background:rgba(244,112,140,0.12); border:1px solid rgba(244,112,140,0.3); }
-  .skill-icon.c-pink svg{ stroke:var(--c-pink); fill:none; }
-  .skill-icon.c-teal{ background:rgba(61,214,198,0.12); border:1px solid rgba(61,214,198,0.3); }
-  .skill-icon.c-teal svg{ stroke:var(--c-teal); fill:none; }
-  .skill-group-label{
-    font-family:'Space Grotesk', sans-serif;
-    font-size:15px;
-    font-weight:600;
-    color:var(--text-hi);
-    margin-bottom:12px;
-  }
-  .skill-chips{ display:flex; flex-wrap:wrap; gap:7px; }
-  .chip{
-    font-size:12.5px;
-    color:var(--text-mid);
-    background:var(--bg-elevated-2);
-    border:1px solid var(--border);
-    border-radius:5px;
-    padding:5px 10px;
-  }
-
-  /* ---------- EDUCATION ---------- */
-  .edu-card{
-    display:flex; justify-content:space-between; align-items:flex-start;
-    flex-wrap:wrap; gap:12px;
-  }
-  .edu-name{ font-size:18px; font-weight:600; font-family:'Space Grotesk', sans-serif; color:var(--text-hi); }
-  .edu-detail{ color:var(--text-mid); font-size:14.5px; margin-top:6px; }
-  .edu-date{ font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--text-low); }
-  .cert-row{ margin-top:22px; display:flex; flex-wrap:wrap; gap:8px; }
-
-  /* ---------- FOOTER ---------- */
-  footer{ padding:56px 0 64px; background:var(--bg-edu); }
-  .footer-inner{
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
-  }
-  .footer-links{ display:flex; gap:22px; }
-  .footer-links a{
-    font-family:'JetBrains Mono', monospace;
-    font-size:13.5px;
-    color:var(--text-mid);
-    text-decoration:none;
-    border-bottom:1px solid transparent;
-    transition:color .15s ease, border-color .15s ease;
-  }
-  .footer-links a:hover{ color:var(--amber); border-color:var(--amber); }
-  .footer-note{ color:var(--text-low); font-size:12.5px; font-family:'JetBrains Mono', monospace; }
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
 </head>
+
 <body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top">
+        <span class="brand-mark">MK</span>
+        <span>Mihir Karnani</span>
+      </a>
 
-<nav>
-  <div class="wrap">
-    <div class="nav-mark"><span class="dot"></span>mihir.karnani</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="mailto:mihirkarnani16@gmail.com">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow"><span class="dot"></span>software engineer / AI &amp; systems</div>
-    <h1 class="headline">I build systems that turn raw data into <span class="accent">fast, useful answers.</span></h1>
-    <p class="hero-sub">Mihir Karnani — CS graduate from the University of South Florida. I've spent my internships building AI pipelines and full-stack systems that hold up in production, not just in a demo.</p>
-    <div class="hero-cta">
-      <a class="btn primary" href="#experience">View experience</a>
-      <a class="btn" href="#projects">See projects</a>
-      <a class="btn" href="mailto:mihirkarnani16@gmail.com">Email me</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#experience">Experience</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a class="nav-cta" href="mailto:mihirkarnani16@gmail.com">Contact</a>
+      </nav>
     </div>
-  </div>
-</header>
+  </header>
 
-<section id="about">
-  <div class="wrap">
-    <div class="section-head"><span class="dot"></span><span class="tag mono">// about</span><h2>A bit about me</h2></div>
-    <div class="about-text">
-      <p>I graduated from the University of South Florida in December 2025 with a degree in Computer Science, and I spent both of my internship summers at Dell working on genuinely different sides of engineering — one summer shipping features for an enterprise platform, the next building an AI system from scratch. That second summer is what pulled me toward wanting to keep working on AI as a real part of how I build, not a feature bolted on afterward.</p>
-      <p>I also spent a few months on the product side at an early-stage AI startup, which changed how I think about what I build — it's not just <strong>does the code work</strong>, it's <strong>does this actually work for the person using it.</strong> Outside of internships, I like finding something that's clearly broken and just building the fix — that's where most of my side projects come from.</p>
-    </div>
-  </div>
-</section>
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            Software Engineer · Backend · Full Stack · Applied AI
+          </div>
 
-<section id="experience">
-  <div class="wrap">
-    <div class="section-head"><span class="dot"></span><span class="tag mono">// experience</span><h2>Where I've worked</h2></div>
+          <h1>
+            I build useful software
+            <span class="hero-highlight">across systems, cloud, and AI.</span>
+          </h1>
 
-    <div class="exp-item">
-      <div class="exp-date mono">May 2025 –<br>Aug 2025</div>
-      <div>
-        <div class="exp-role">Software Engineering Intern — AI Research &amp; Development</div>
-        <div class="exp-org">Dell Technologies</div>
-        <ul class="exp-bullets">
-          <li>Built a real-time log ingestion pipeline processing <strong>100,000 server logs and Jira tickets per day</strong> from Kafka streams, powering an AI-driven tool for engineers to query and diagnose issues in real time.</li>
-          <li>Designed and deployed a RAG-based retrieval pipeline (Python, Ollama, Llama 3.1, TF-IDF, cosine similarity, ChromaDB, Pandas) that cut issue triage time by about <strong>96%, from 2 hours to 5 minutes.</strong></li>
-          <li>Fine-tuned Llama 3.1 on NVIDIA GB200 GPUs with Unsloth and LoRA adapters, reducing inference latency from 2–3 minutes to <strong>under 10 seconds.</strong></li>
-          <li>Used AI-assisted tools (Cursor, Claude) throughout the build, and shipped the REST APIs and TypeScript frontend supporting 50+ engineers in production.</li>
-        </ul>
-      </div>
-    </div>
+          <p class="hero-lead">
+            I’m Mihir, a software engineer with experience across backend systems,
+            full-stack products, cloud infrastructure, and applied AI. I care about
+            building software that is reliable, understandable, and useful to the
+            people actually using it.
+          </p>
 
-    <div class="exp-item">
-      <div class="exp-date mono">Nov 2025 –<br>Jan 2026</div>
-      <div>
-        <div class="exp-role">Product Manager Intern</div>
-        <div class="exp-org">Visualize.ai (Early-Stage Startup)</div>
-        <ul class="exp-bullets">
-          <li>Partnered with engineering and design to scope AI-powered analytics features from concept through implementation, translating customer needs into technical requirements.</li>
-          <li>Collaborated with engineers on computer vision model limitations and edge cases, bridging product and engineering perspectives to ship features that delivered real value.</li>
-        </ul>
-      </div>
-    </div>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">Explore my work</a>
+            <a
+              class="button secondary"
+              href="https://github.com/Mihir16x"
+              target="_blank"
+              rel="noopener"
+            >GitHub</a>
+            <a
+              class="button secondary"
+              href="https://www.linkedin.com/in/mihir-karnani-16x/"
+              target="_blank"
+              rel="noopener"
+            >LinkedIn</a>
+          </div>
 
-    <div class="exp-item">
-      <div class="exp-date mono">May 2024 –<br>Aug 2024</div>
-      <div>
-        <div class="exp-role">Software Engineering Intern — Full Stack Development</div>
-        <div class="exp-org">Dell Technologies</div>
-        <ul class="exp-bullets">
-          <li>Developed the Health Rules feature for an enterprise AIOps platform (Angular, TypeScript, Java microservices), enabling proactive detection of system and battery issues.</li>
-          <li>Built unit tests with QTest and integration tests via Postman, and contributed to code reviews to improve reliability — reducing portal load times by <strong>32%.</strong></li>
-          <li>Delivered an Email Notification dashboard centralizing <strong>10,000+ system alerts</strong> and expanded RESTful API endpoints using Java and API Gateway routes.</li>
-        </ul>
-      </div>
-    </div>
+        <div class="proof-row" aria-label="Highlights">
+          <div class="proof-card">
+            <strong>2×</strong>
+            <span>Dell Internships</span>
+          </div>
 
-    <div class="exp-item">
-      <div class="exp-date mono">Aug 2023 –<br>Jan 2026</div>
-      <div>
-        <div class="exp-role">Teaching Assistant</div>
-        <div class="exp-org">University of South Florida, CS Department</div>
-        <ul class="exp-bullets">
-          <li>Mentored <strong>80+ students</strong> in RISC-V and C#, hosting review sessions that improved average exam performance by <strong>15%.</strong></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="proof-card">
+            <strong>2×</strong>
+            <span>Startup Internships</span>
+          </div>
 
-<section id="projects">
-  <div class="wrap">
-    <div class="section-head"><span class="dot"></span><span class="tag mono">// projects</span><h2>Things I've built on my own</h2></div>
-    <div class="proj-grid">
+          <div class="proof-card">
+            <strong>100K+</strong>
+            <span>Logs / Day</span>
+          </div>
 
-      <div class="proj-card c-purple">
-        <div class="proj-icon c-purple"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10h6M9 14h4"/></svg></div>
-        <div class="proj-title">Resume Resurrector</div>
-        <div class="proj-desc">A pipeline that extracts and scores skills, education, and experience from unstructured PDF resumes, generating targeted feedback. Used by 300+ students before career fairs. Most of the work was getting the model to reliably produce structured output instead of vague responses.</div>
-        <div class="tag-row">
-          <span class="pill">Python</span><span class="pill">LangChain</span><span class="pill">OpenAI API</span><span class="pill">Streamlit</span>
+          <div class="proof-card">
+            <strong>3.97</strong>
+            <span>GPA</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Engineering illustration">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+
+          <div class="visual-card visual-code">
+            <div class="mini-title">
+              <span class="mini-icon blue">&lt;/&gt;</span>
+              Backend
+            </div>
+            <div class="bars">
+              <i></i><i></i><i></i>
+            </div>
+          </div>
+
+          <div class="visual-card visual-ai">
+            <div class="mini-title">
+              <span class="mini-icon purple">✦</span>
+              Applied AI
+            </div>
+            <div class="node-flow">
+              <b></b><i></i><b></b><i></i><b></b>
+            </div>
+          </div>
+
+          <div class="visual-card visual-cloud">
+            <div class="mini-title">
+              <span class="mini-icon orange">☁</span>
+              Cloud
+            </div>
+            <div class="bars orange-bars">
+              <i></i><i></i><i></i>
+            </div>
+          </div>
+
+          <div class="visual-card visual-data">
+            <div class="mini-title">
+              <span class="mini-icon green">▤</span>
+              Data
+            </div>
+            <div class="db-shape">
+              <i></i><i></i><i></i>
+            </div>
+          </div>
+
+          <div class="visual-center">
+            <div class="center-badge">MK</div>
+            <span>build → test → ship</span>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="proj-card c-blue">
-        <div class="proj-icon c-blue"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></div>
-        <div class="proj-title">Work Wise</div>
-        <div class="proj-desc">Full-stack task management system built for my campus rec department after I noticed their manual process was broken. Role-based access, automated completion tracking, and relational schema design from the ground up.</div>
-        <div class="tag-row">
-          <span class="pill">React</span><span class="pill">PostgreSQL</span><span class="pill">Supabase</span>
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">What I build</span>
+          <h2>One engineer, four problem spaces.</h2>
+          <p>I like work where product thinking and engineering depth meet.</p>
+        </div>
+
+        <div class="build-grid">
+          <article class="build-card blue">
+            <div class="build-icon">&lt;/&gt;</div>
+            <h3>Backend Systems</h3>
+            <p>APIs, service logic, transactional workflows, databases, testing, and reliability.</p>
+          </article>
+
+          <article class="build-card coral">
+            <div class="build-icon">▣</div>
+            <h3>Full-Stack Products</h3>
+            <p>User-facing interfaces backed by real APIs, databases, and end-to-end workflows.</p>
+          </article>
+
+          <article class="build-card purple">
+            <div class="build-icon">✦</div>
+            <h3>Applied AI</h3>
+            <p>RAG, structured LLM outputs, retrieval pipelines, fine-tuning, and AI-powered workflows.</p>
+          </article>
+
+          <article class="build-card green">
+            <div class="build-icon">☁</div>
+            <h3>Cloud & Infrastructure</h3>
+            <p>AWS services, CI/CD, containers, observability, event-driven systems, and deployment workflows.</p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="proj-card c-orange">
-        <div class="proj-icon c-orange"><svg viewBox="0 0 24 24"><path d="M4 17V7a2 2 0 0 1 2-2h5l2 2h5a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/></svg></div>
-        <div class="proj-title">EventStream</div>
-        <div class="proj-desc">A serverless, event-driven backend that ingests and processes client-generated events without dedicated servers — structured storage in DynamoDB, raw payload archiving to S3, and full observability via CloudWatch.</div>
-        <div class="tag-row">
-          <span class="pill">AWS Lambda</span><span class="pill">API Gateway</span><span class="pill">DynamoDB</span><span class="pill">CloudWatch</span>
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div>
+            <span class="section-kicker">Experience</span>
+            <h2>Where I’ve worked.</h2>
+          </div>
+          <p>Software engineering, AI R&D, product, and teaching experience across industry and university teams.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item current">
+            <div class="timeline-meta">
+              <span>Current</span>
+              <i></i>
+            </div>
+            <div class="timeline-card">
+              <div class="role-head">
+                <div>
+                  <h3>Software Engineer — Data & AI</h3>
+                  <span class="company-name">Debut Labs</span>
+                </div>
+                <span class="role-badge">Current</span>
+              </div>
+              <p>Working on data and AI systems in an engineering role spanning backend development and applied AI.</p>
+              <div class="tag-row">
+                <span>Python</span>
+                <span>Data</span>
+                <span>Applied AI</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span>May–Aug 2025</span>
+              <i></i>
+            </div>
+            <div class="timeline-card">
+              <div class="role-head">
+                <div>
+                  <h3>Software Engineering Intern — AI R&D</h3>
+                  <span class="company-name">Dell Technologies</span>
+                </div>
+              </div>
+              <ul>
+                <li>Built a distributed ingestion pipeline processing <strong>100K+ server logs/day</strong> and Jira tickets from Kafka streams.</li>
+                <li>Designed a RAG pipeline using Llama 3.1, ChromaDB, TF-IDF, cosine similarity, and Pandas to reduce issue-triage time from hours to minutes.</li>
+                <li>Fine-tuned Llama 3.1 with LoRA + Unsloth on NVIDIA GB200 GPUs, reducing inference latency to under 10 seconds.</li>
+              </ul>
+              <div class="tag-row">
+                <span>Python</span>
+                <span>Kafka</span>
+                <span>RAG</span>
+                <span>Llama 3.1</span>
+                <span>TypeScript</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span>Nov 2025–Jan 2026</span>
+              <i></i>
+            </div>
+            <div class="timeline-card">
+              <div class="role-head">
+                <div>
+                  <h3>Product Management Intern</h3>
+                  <span class="company-name">Visualize.AI</span>
+                </div>
+              </div>
+              <ul>
+                <li>Worked with engineering and design to turn customer needs into scoped product requirements.</li>
+                <li>Collaborated on computer-vision limitations and edge cases for AI-powered analytics features.</li>
+              </ul>
+              <div class="tag-row">
+                <span>Product</span>
+                <span>Computer Vision</span>
+                <span>AI</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span>May–Aug 2024</span>
+              <i></i>
+            </div>
+            <div class="timeline-card">
+              <div class="role-head">
+                <div>
+                  <h3>Software Engineering Intern — Full Stack</h3>
+                  <span class="company-name">Dell Technologies</span>
+                </div>
+              </div>
+              <ul>
+                <li>Built features for an enterprise AIOps portal using Angular, TypeScript, and Java microservices.</li>
+                <li>Optimized frontend and backend paths, reducing portal load times by <strong>32%</strong>.</li>
+                <li>Expanded REST API endpoints and delivered an alert dashboard supporting <strong>10K+ system notifications</strong>.</li>
+              </ul>
+              <div class="tag-row">
+                <span>Angular</span>
+                <span>TypeScript</span>
+                <span>Java</span>
+                <span>REST APIs</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span>Oct 2023–Jan 2026</span>
+              <i></i>
+            </div>
+            <div class="timeline-card">
+              <div class="role-head">
+                <div>
+                  <h3>Teaching Assistant</h3>
+                  <span class="company-name">University of South Florida</span>
+                </div>
+              </div>
+              <p>Mentored 80+ students in RISC-V, Python, C, and C#, including revision sessions that improved average exam performance by about 15%.</p>
+              <div class="tag-row">
+                <span>Teaching</span>
+                <span>RISC-V</span>
+                <span>Python</span>
+                <span>C/C#</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="proj-card c-pink">
-        <div class="proj-icon c-pink"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-        <div class="proj-title">My Image Buddy</div>
-        <div class="proj-desc">A cloud-integrated iOS app for secure image uploads, with Cognito-based authentication and asynchronous upload tracking. Configured and deployed the entire AWS backend myself via the Amplify CLI.</div>
-        <div class="tag-row">
-          <span class="pill">Swift</span><span class="pill">AWS Amplify</span><span class="pill">S3</span><span class="pill">Cognito</span>
+    <section class="section section-soft" id="leadership">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Leadership & Community</span>
+          <h2>Engineering is only part of the story.</h2>
+          <p>Teaching, leading teams, competing for USF, and community service have all shaped how I work.</p>
+        </div>
+
+        <div class="community-grid">
+          <article class="community-card">
+            <div class="community-icon blue">&lt;/&gt;</div>
+            <span class="community-type">Technical Leadership</span>
+            <h3>ACM @ USF</h3>
+            <h4>Technical Lead</h4>
+            <p>Led C/C++ workshops for 60+ students and built hands-on curriculum covering HTML, CSS, JavaScript, SQL, and Flutter.</p>
+          </article>
+
+          <article class="community-card">
+            <div class="community-icon orange">⚙</div>
+            <span class="community-type">Project Leadership</span>
+            <h3>SASE</h3>
+            <h4>Project & Technical Director</h4>
+            <p>Led three multidisciplinary engineering teams and managed an $800+ project budget with monthly expenditure reporting.</p>
+          </article>
+
+          <article class="community-card">
+            <div class="community-icon purple">🤝</div>
+            <span class="community-type">Partnerships</span>
+            <h3>SHPE @ USF</h3>
+            <h4>Director of External Affairs</h4>
+            <p>Coordinated STEM events with companies and organizations, developed external partnerships, and managed the chapter’s LinkedIn presence.</p>
+          </article>
+
+          <article class="community-card">
+            <div class="community-icon coral">🏓</div>
+            <span class="community-type">Athletics & Coaching</span>
+            <h3>USF Table Tennis</h3>
+            <h4>Player & Coach</h4>
+            <p>Represented USF at state and regional tournaments, ranked 2nd in Florida across two seasons, and helped coach the university team.</p>
+          </article>
+
+          <article class="community-card">
+            <div class="community-icon green">🌱</div>
+            <span class="community-type">Community Service</span>
+            <h3>USF Botanical Gardens</h3>
+            <h4>Volunteer</h4>
+            <p>Supported garden upkeep through cleanup, litter removal, planting, weed clearing, and propagation of new plants.</p>
+          </article>
         </div>
       </div>
+    </section>
 
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div>
+            <span class="section-kicker">Featured Projects</span>
+            <h2>Different projects, different engineering muscles.</h2>
+          </div>
+          <p>Backend, full-stack, cloud, observability, and applied AI all have a place here.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card feature">
+            <div class="project-art meeting-art">
+              <div class="fake-window">
+                <div class="fake-top"><i></i><i></i><i></i></div>
+                <div class="meeting-ui">
+                  <div class="notes"><i></i><i></i><i></i><i></i></div>
+                  <div class="result">
+                    <b>Summary</b>
+                    <i></i><i></i>
+                    <b>Action items</b>
+                    <span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Full Stack · Applied AI</span>
+                <span>01</span>
+              </div>
+              <h3>Meeting Action Extractor</h3>
+              <p>Transforms unstructured meeting notes into summaries, decisions, owners, deadlines, and follow-up actions with validated structured output and PostgreSQL history.</p>
+              <div class="tag-row">
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>FastAPI</span>
+                <span>OpenAI</span>
+                <span>PostgreSQL</span>
+              </div>
+              <a class="project-link" href="https://github.com/Mihir16x/Meeting-Action-Extractor" target="_blank" rel="noopener">View repository ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-art ledger-art">
+              <div class="ledger-flow">
+                <div class="account">A</div>
+                <b>→</b>
+                <div class="transfer">
+                  <small>TRANSFER</small>
+                  <strong>$200</strong>
+                  <em>idempotency ✓</em>
+                </div>
+                <b>→</b>
+                <div class="account">B</div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Backend Engineering</span>
+                <span>02</span>
+              </div>
+              <h3>Transaction Ledger API</h3>
+              <p>Spring Boot REST API for account transfers with transactional balance updates, idempotency protection, validation, and JUnit coverage.</p>
+              <div class="tag-row">
+                <span>Java</span>
+                <span>Spring Boot</span>
+                <span>JPA</span>
+                <span>JUnit</span>
+                <span>H2</span>
+              </div>
+              <a class="project-link" href="https://github.com/Mihir16x/Transaction-Ledger-API" target="_blank" rel="noopener">View repository ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-art incident-art">
+              <div class="incident-board">
+                <div><small>OPEN</small><i></i><i></i></div>
+                <div><small>ACTIVE</small><i></i></div>
+                <div><small>RESOLVED</small><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Cloud · Operations</span>
+                <span>03</span>
+              </div>
+              <h3>IT Incident Tracker</h3>
+              <p>Cloud-based incident management system designed around operational workflows for tracking, prioritizing, and resolving IT incidents.</p>
+              <div class="tag-row">
+                <span>AWS</span>
+                <span>Python</span>
+                <span>REST APIs</span>
+                <span>Cloud</span>
+              </div>
+              <a class="project-link" href="https://github.com/Mihir16x/IT-Incident-Tracker" target="_blank" rel="noopener">View repository ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-art logs-art">
+              <div class="terminal">
+                <div><b>INFO</b><span>auth-service</span></div>
+                <div><b>WARN</b><span>api-gateway</span></div>
+                <div><b>ERROR</b><span>payment-service</span></div>
+                <div><b>ERROR</b><span>payment-service</span></div>
+                <div><b>ERROR</b><span>payment-service</span></div>
+                <em>spike detected ✓</em>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Observability · Reliability</span>
+                <span>04</span>
+              </div>
+              <h3>Log Triage Tool</h3>
+              <p>Parses application logs into SQLite, calculates service-level error rates, detects clustered error spikes, and validates behavior with pytest + CI.</p>
+              <div class="tag-row">
+                <span>Python</span>
+                <span>SQLite</span>
+                <span>pytest</span>
+                <span>GitHub Actions</span>
+              </div>
+              <a class="project-link" href="https://github.com/Mihir16x/Log-Triage-Tool" target="_blank" rel="noopener">View repository ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-art resume-art">
+              <div class="resume-preview">
+                <div class="resume-document">
+                  <div class="resume-avatar"></div>
+                  <div class="resume-lines">
+                    <i></i><i></i><i></i><i></i>
+                  </div>
+                </div>
+                <div class="resume-score-card">
+                  <small>JOB FIT</small>
+                  <strong>92%</strong>
+                  <div class="score-bar"><span></span></div>
+                  <em>targeted feedback ✓</em>
+                </div>
+                <div class="usage-badge">
+                  <strong>300+</strong>
+                  <span>students</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Applied AI · Resume Analysis</span>
+                <span>05</span>
+              </div>
+              <h3>Resume Resurrector</h3>
+              <p>AI-powered resume analysis tool that extracts resume content, evaluates job fit, and generates targeted improvement feedback. Used by <strong>300+ students</strong>.</p>
+              <div class="tag-row">
+                <span>Python</span>
+                <span>LangChain</span>
+                <span>OpenAI</span>
+                <span>Streamlit</span>
+              </div>
+              <a class="project-link" href="https://github.com/Mihir16x/Resume-Resurrector" target="_blank" rel="noopener">View repository ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-art workwise-art">
+              <div class="workwise-preview">
+                <div class="workwise-sidebar">
+                  <div class="ww-logo">W</div>
+                  <i></i><i></i><i></i>
+                </div>
+                <div class="workwise-main">
+                  <div class="workwise-header">
+                    <div>
+                      <small>TODAY</small>
+                      <strong>Team Tasks</strong>
+                    </div>
+                    <span>25+ staff</span>
+                  </div>
+                  <div class="task-card done"><b>Opening checklist</b><em>Done</em></div>
+                  <div class="task-card active"><b>Facility inspection</b><em>In progress</em></div>
+                  <div class="task-card"><b>Evening close</b><em>Assigned</em></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Full Stack · Operations</span>
+                <span>06</span>
+              </div>
+              <h3>WorkWise</h3>
+              <p>Collaborative workforce-management application for task assignment, scheduling, team coordination, and persistent operational workflows. Used by <strong>25+ rec center employees</strong>.</p>
+              <div class="tag-row">
+                <span>Flutter</span>
+                <span>Supabase</span>
+                <span>PostgreSQL</span>
+              </div>
+              <a class="project-link" href="https://github.com/Mihir16x/WorkWise" target="_blank" rel="noopener">View repository ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Technical Toolkit</span>
+          <h2>Tools I reach for.</h2>
+          <p>Grouped by how I use them instead of presented as one giant logo wall.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-panel">
+            <h3 class="skill-title blue">&lt;/&gt; Languages</h3>
+            <div class="skill-list">
+              <span>Python</span><span>Java</span><span>C#</span><span>C++</span><span>TypeScript</span><span>JavaScript</span><span>SQL</span>
+            </div>
+          </article>
+
+          <article class="skill-panel">
+            <h3 class="skill-title coral">▣ Frontend & Backend</h3>
+            <div class="skill-list">
+              <span>React</span><span>Angular</span><span>Flutter</span><span>Spring Boot</span><span>FastAPI</span><span>ASP.NET Core</span><span>REST APIs</span>
+            </div>
+          </article>
+
+          <article class="skill-panel">
+            <h3 class="skill-title purple">✦ AI / ML</h3>
+            <div class="skill-list">
+              <span>LLMs</span><span>RAG</span><span>Llama 3.1</span><span>LangChain</span><span>LoRA</span><span>PyTorch</span><span>ChromaDB</span><span>Pandas</span>
+            </div>
+          </article>
+
+          <article class="skill-panel">
+            <h3 class="skill-title green">☁ Cloud & DevOps</h3>
+            <div class="skill-list">
+              <span>AWS</span><span>Docker</span><span>Kubernetes</span><span>GitHub Actions</span><span>Jenkins</span><span>CI/CD</span><span>Linux</span>
+            </div>
+          </article>
+
+          <article class="skill-panel">
+            <h3 class="skill-title yellow">▤ Data & Messaging</h3>
+            <div class="skill-list">
+              <span>PostgreSQL</span><span>SQLite</span><span>MongoDB</span><span>Supabase</span><span>Kafka</span>
+            </div>
+          </article>
+
+          <article class="skill-panel">
+            <h3 class="skill-title teal">⌘ Developer Tools</h3>
+            <div class="skill-list">
+              <span>Git</span><span>Postman</span><span>Cursor</span><span>Claude</span><span>Agile</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container education-layout">
+        <div>
+          <span class="section-kicker">Education</span>
+          <h2>University of South Florida</h2>
+          <p class="education-degree">B.S. Computer Science · Minor in Economics & Entrepreneurship</p>
+          <div class="education-meta">
+            <span>GPA 3.97 / 4.00</span>
+            <span>Summa Cum Laude</span>
+            <span>Dean’s List</span>
+            <span>Tampa, FL</span>
+          </div>
+        </div>
+
+        <div class="cert-panel">
+          <h3>Certifications</h3>
+          <div class="cert-grid">
+            <div class="cert-pill aws"><b>AWS</b><span>Cloud Practitioner</span></div>
+            <div class="cert-pill azure"><b>Azure</b><span>AZ-900 · In Progress</span></div>
+            <div class="cert-pill excel"><b>Excel</b><span>MOS Associate</span></div>
+            <div class="cert-pill powerpoint"><b>PowerPoint</b><span>MOS Associate</span></div>
+            <div class="cert-pill codepath"><b>CodePath</b><span>Advanced Web Dev</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-card">
+        <div>
+          <span class="section-kicker">Let’s connect</span>
+          <h2>Want to talk software?</h2>
+          <p>I’m always happy to talk about engineering, projects, or opportunities.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:mihirkarnani16@gmail.com">Email me</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/mihir-karnani-16x/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button secondary" href="https://github.com/Mihir16x" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 Mihir Karnani</span>
+      <span>Built with HTML, CSS & a little JavaScript.</span>
     </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <div class="section-head"><span class="dot"></span><span class="tag mono">// skills</span><h2>What I work with</h2></div>
-    <div class="skills-grid">
-      <div class="skill-card c-blue">
-        <div class="skill-icon c-blue"><svg viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div>
-        <div class="skill-group-label">Languages</div>
-        <div class="skill-chips">
-          <span class="chip">Python</span><span class="chip">Java</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">C++</span><span class="chip">C#</span><span class="chip">SQL</span>
-        </div>
-      </div>
-      <div class="skill-card c-purple">
-        <div class="skill-icon c-purple"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18M12 3a9 9 0 0 0 0 18M3 12h18"/></svg></div>
-        <div class="skill-group-label">AI / ML</div>
-        <div class="skill-chips">
-          <span class="chip">LLMs</span><span class="chip">RAG</span><span class="chip">LangChain</span><span class="chip">LoRA</span><span class="chip">NLP</span><span class="chip">PyTorch</span><span class="chip">Prompt Engineering</span>
-        </div>
-      </div>
-      <div class="skill-card c-green">
-        <div class="skill-icon c-green"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><circle cx="7" cy="7" r="0.5"/><circle cx="7" cy="17" r="0.5"/></svg></div>
-        <div class="skill-group-label">Backend &amp; Systems</div>
-        <div class="skill-chips">
-          <span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">REST APIs</span><span class="chip">Kafka</span><span class="chip">Microservices</span>
-        </div>
-      </div>
-      <div class="skill-card c-orange">
-        <div class="skill-icon c-orange"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
-        <div class="skill-group-label">Databases &amp; Cloud</div>
-        <div class="skill-chips">
-          <span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">CI/CD</span>
-        </div>
-      </div>
-      <div class="skill-card c-pink">
-        <div class="skill-icon c-pink"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="13" rx="1"/><path d="M8 21h8M12 18v3"/></svg></div>
-        <div class="skill-group-label">Frontend</div>
-        <div class="skill-chips">
-          <span class="chip">React</span><span class="chip">Angular</span><span class="chip">Flutter</span>
-        </div>
-      </div>
-      <div class="skill-card c-teal">
-        <div class="skill-icon c-teal"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a4 4 0 0 1-5.4 5.4L7 20l-3-3 8.4-8.4a4 4 0 0 1 5.4-5.4l-3.1 3.1z"/></svg></div>
-        <div class="skill-group-label">Tools</div>
-        <div class="skill-chips">
-          <span class="chip">Git</span><span class="chip">Postman</span><span class="chip">Cursor</span><span class="chip">Claude</span><span class="chip">Agile</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="education">
-  <div class="wrap">
-    <div class="section-head"><span class="dot"></span><span class="tag mono">// education</span><h2>Education</h2></div>
-    <div class="edu-card">
-      <div>
-        <div class="edu-name">University of South Florida</div>
-        <div class="edu-detail">B.S. in Computer Science &amp; Minor in Economics &amp; Entrepreneurship</div>
-        <div class="edu-detail">Dean's List, Summa Cum Laude · GPA 3.97 / 4.00</div>
-      </div>
-      <div class="edu-date">Tampa, FL · Dec 2025</div>
-    </div>
-    <div class="cert-row">
-      <span class="chip">AWS Cloud Quest — Cloud Practitioner</span>
-      <span class="chip">CodePath Advanced Web Dev</span>
-      <span class="chip">Azure Fundamentals (in progress)</span>
-      <span class="chip">Microsoft Office Specialist — PowerPoint (2013)</span>
-      <span class="chip">Microsoft Office Specialist — Excel (2013)</span>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-inner">
-      <div class="footer-note">© 2026 Mihir Karnani</div>
-      <div class="footer-links">
-        <a href="mailto:mihirkarnani16@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/mihir-karnani-16x" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/Mihir16x" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
